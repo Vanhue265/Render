@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>All Products</title>
+</head>
+<style>
+    h1{ text-align: center;}
+    form { text-align: center;}
+    a {
+        text-decoration: none;
+        
+    }
+    .add {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 35px;
+        color: #ffffff !important;
+        border-radius: 5px;
+        background: #9B6A1D;
+        border: 1px solid #9B6A1D;
+        transition: 0.4s;
+    }
+    .add:hover {
+        background: #292929;
+    }
+    .home {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 35px;
+        color: #ffffff !important;
+        border-radius: 5px;
+        background: rgb(212, 0, 255);
+        border: 1px solid rgb(212, 0, 255);
+        transition: 0.4s;
+    }
+    .home:hover {
+        background: #292929;
+    }
+    .update {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 35px;
+        color: #ffffff !important;
+        border-radius: 5px;
+        background: yellowgreen;
+        border: 1px solid yellowgreen;
+        transition: 0.4s;
+    }
+    .update:hover {
+        background: #292929;
+    }
+    .delete {
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 35px;
+        color: #ffffff !important;
+        border-radius: 5px;
+        background: red;
+        border: 1px solid red;
+        transition: 0.4s;
+    }
+    .delete:hover {
+        background: #292929;
+    }
+    #search-text{
+        outline: none;
+        border-radius:20px
+    }
+    #search-box #search-text{
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+    #search-btn{
+        padding: 10px 15px;
+        font-size: 18px;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;       
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 2px solid #e7e7e7;   
+        border: none;  
+    }
+    #search-btn:hover {background-color: #e7e7e7; border-radius:20px}
+
+</style>
+<body>
+    <h1 style="color: green;">All Products</h1>
+    <form action="/search" method="post" id="search-box">
+    <input type="text" name="search" id="search-text">
+    {{!-- <input type="submit" value="Search"> --}}
+    <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button type="button" onclick="location.href='/new';" class="add" >New Product</button>
+    <button type="button" onclick="location.href='/';" class="home" >Home</button>
+    </form>
+    <br><br>
+    <table border="1" width="1900" height= "400px">
+        <tr>
+            <th>Name Product</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        {{#each results}}
+        <tr>
+            <th>{{name}}</th>
+            <th>{{price}}</th>
+            <th>{{type}}</th>
+            <th><img src="{{picture}}" alt="" width="350" height="200"></th>
+            <th>
+                <button type="button" onclick="location.href='/delete?id={{_id}}';" class="delete" >Delete</button>
+                <br><br>               
+                <button type="button" onclick="location.href='/Edit?id={{_id}}';" class="update" >Update</button>
+            </th>
+        </tr>
+        {{/each}}
+        
+    </table>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=q">
+    <title>New Product</title>
+</head>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111;
+    }
+    form{
+        margin-left: 10%;
+        font-size: 18px
+    }
+    input{
+        outline: none;
+        padding: 10px 15px;
+        border-radius:5px;
+        font-size: 18px
+    }
+    select{
+        outline: none;
+        border-radius:5px;
+        font-size: 18px;
+        margin-left: 25px;
+    }
+    img{
+        float: left;
+    }
+    #submit-new{
+        border-radius:50%;
+        margin-left: 120px;
+    }
+    #submit-new:hover{
+        background: rgb(194, 90, 90)
+    }
+</style>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="/new">New Product</a></li>
+            <li><a href="/all">All Products</a></li>           
+        </ul> 
+    </div><br><br>
+    <img hspace="0" src="https://img.zing.vn/products/zsm/skin-gatsby/src/images/garage/car-11.png" alt="">
+    <form action="/new" method="post">
+        Name <input hspace="120" type="text" name="txtName" >
+        <br><br>
+        Price <input hspace="125" type="text" name="txtPrice">
+        <br><br>
+        Choose type of car           
+                <select type="combox" name="txtType" value="{{product.type}}">                   
+                    <option value="Alpha">Alpha</option>
+                    <option value="Reno">Reno</option>
+                    <option value="Polaris">Polaris</option>
+                    <option value="Troy">Troy</option>
+                </select>
+                            
+            <br>   
+        <br>
+        Picture URL
+        <input hspace="70" type="text" name="txtPic" id="">
+        <br><br><br><br><br>
+        <input id="submit-new" type="submit" value="Create a new Product" style="">
+    </form>
+</body>
+</html>
