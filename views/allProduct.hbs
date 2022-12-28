@@ -119,7 +119,7 @@
             <th>{{type}}</th>
             <th><img src="{{picture}}" alt="" width="350" height="200"></th>
             <th>
-                <button type="button" onclick="location.href='/delete?id={{_id}}';" class="delete" >Delete</button>
+                <button type="button" onclick="if (!confirm('Do you want to delete this product?')) { return false };location.href='/delete?id={{_id}}';" class="delete" >Delete</button>
                 <br><br>               
                 <button type="button" onclick="location.href='/Edit?id={{_id}}';" class="update" >Update</button>
             </th>
@@ -128,4 +128,7 @@
         
     </table>
 </body>
+<script>
+    
+</script>
 </html>
