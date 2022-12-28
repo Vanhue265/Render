@@ -66,12 +66,12 @@
     </div><br><br>
     <img hspace="0" src="https://img.zing.vn/products/zsm/skin-gatsby/src/images/garage/car-11.png" alt="">
     <form action="/new" method="post">
-        Name <input hspace="120" type="text" name="txtName" >
+        Name <input hspace="120" type="text" name="txtName" required>
         <br><br>
-        Price <input hspace="125" type="text" name="txtPrice">
+        Price <input hspace="125" type="number" name="txtPrice" required>
         <br><br>
         Choose type of car           
-                <select type="combox" name="txtType" value="{{product.type}}">                   
+                <select type="combox" name="txtType" value="{{product.type}}" required>                   
                     <option value="Alpha">Alpha</option>
                     <option value="Reno">Reno</option>
                     <option value="Polaris">Polaris</option>
@@ -81,7 +81,7 @@
             <br>   
         <br>
         Picture URL
-        <input hspace="70" type="text" name="txtPic" id="">
+        <input hspace="70" type="text" name="txtPic" id="" required>
         <br><br><br><br><br>
         <input id="submit-new" type="submit" value="Create a new Product" style="">
     </form>

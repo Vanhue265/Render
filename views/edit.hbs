@@ -67,12 +67,12 @@
     <img hspace="0" src="https://img.zing.vn/products/zsm/skin-gatsby/src/images/garage/car-9.png" alt="">
     <form action="/edit" method="post">
     <input type="hidden" name="id" value="{{product._id}}">
-        Name <input hspace="120" type="text" name="txtName" value="{{product.name}}">
+        Name <input hspace="120" type="text" name="txtName" value="{{product.name}}" required>
         <br><br>
-        Price <input hspace="125" type="text" name="txtPrice" value="{{product.price}}">
+        Price <input hspace="125" type="number" name="txtPrice" value="{{product.price}}" required>
         <br><br>
         Choose type of car           
-                <select type="combox" name="txtType" value="{{product.type}}">                   
+                <select type="combox" name="txtType" value="{{product.type}}" required>                   
                     <option value="Alpha">Alpha</option>
                     <option value="Reno">Reno</option>
                     <option value="Polaris">Polaris</option>
@@ -82,7 +82,7 @@
             <br>   
         <br>
         Picture URL
-        <input hspace="70" type="text" name="txtPic" value="{{product.pictureURL}}" id="">
+        <input hspace="70" type="text" name="txtPic" value="{{product.pictureURL}}" id="" required>
         <br><br><br><br><br>
         <input id="submit-edit" type="submit" value="Update Product" style="">
     </form>
