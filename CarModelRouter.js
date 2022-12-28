@@ -3,8 +3,6 @@ const { ObjectId } = require('mongodb')
 const { insertProduct, allProduct, deleteProduct, updateProduct, findProductById,searchProductByName } = require('./CarModelService')
 var app = expesss()
 
-var MongoClient = require('mongodb').MongoClient
-var url = 'mongodb://0.0.0.0:27017'
 
 app.set('view engine','hbs')
 app.use(expesss.urlencoded({extended:true}))
