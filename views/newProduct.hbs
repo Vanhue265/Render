@@ -68,7 +68,7 @@
     <form action="/new" method="post">
         Name <input hspace="120" type="text" name="txtName" required>
         <br><br>
-        Price <input hspace="125" type="number" name="txtPrice" required>
+        Price <input hspace="125" type="number" name="txtPrice" min="0" required>
         <br><br>
         Choose type of car           
                 <select type="combox" name="txtType" value="{{product.type}}" required>                   
